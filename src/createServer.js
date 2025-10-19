@@ -57,6 +57,46 @@ const createServer = ({ mathBasic }) => {
         return { value };
       },
     },
+    {
+      method: "GET",
+      path: "/rectangle/area/{length}/{width}",
+      handler: (request) => {
+        const { length, width } = request.params;
+        const figureCalculator = new FigureCalculator(mathBasic);
+        const value = figureCalculator.calculateRectangleArea(
+          Number(length),
+          Number(width),
+        );
+        return { value };
+      },
+    },
+    {
+      method: "GET",
+      path: "/triangle/perimeter/{sideA}/{sideB}/{base}",
+      handler: (request) => {
+        const { sideA, sideB, base } = request.params;
+        const figureCalculator = new FigureCalculator(mathBasic);
+        const value = figureCalculator.calculateTrianglePerimeter(
+          Number(sideA),
+          Number(sideB),
+          Number(base),
+        );
+        return { value };
+      },
+    },
+    {
+      method: "GET",
+      path: "/triangle/area/{base}/{height}",
+      handler: (request) => {
+        const { base, height } = request.params;
+        const figureCalculator = new FigureCalculator(mathBasic);
+        const value = figureCalculator.calculateTriangleArea(
+          Number(base),
+          Number(height),
+        );
+        return { value };
+      },
+    },
   ]);
 
   return server;
