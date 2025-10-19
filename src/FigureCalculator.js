@@ -36,18 +36,18 @@ class FigureCalculator {
       throw new Error("fungsi hanya menerima tiga parameter");
     }
 
-    const [side1, side2, side3] = args;
+    const [sideA, sideB, base] = args;
 
     if (
-      typeof side1 !== "number" ||
-      typeof side2 !== "number" ||
-      typeof side3 !== "number"
+      typeof sideA !== "number" ||
+      typeof sideB !== "number" ||
+      typeof base !== "number"
     ) {
       throw new Error("fungsi hanya menerima parameter number");
     }
 
     // formula: side1 + side2 + side3
-    return this._mathBasic.add(this._mathBasic.add(side1, side2), side3);
+    return this._mathBasic.add(this._mathBasic.add(sideA, sideB), base);
   }
   calculateTriangleArea(...args) {
     if (args.length !== 2) {

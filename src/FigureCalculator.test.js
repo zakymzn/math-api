@@ -128,17 +128,17 @@ describe("A FigureCalculator", () => {
 
     it("should return correct value based on triangle perimeter formula", () => {
       // Arrange
-      const side1 = 10;
-      const side2 = 20;
-      const side3 = 30;
+      const sideA = 10;
+      const sideB = 20;
+      const base = 30;
       const spyAdd = jest.spyOn(MathBasic, "add");
       const figureCalculator = new FigureCalculator(MathBasic);
 
       // Action
       const result = figureCalculator.calculateTrianglePerimeter(
-        side1,
-        side2,
-        side3,
+        sideA,
+        sideB,
+        base,
       );
 
       // Assert
